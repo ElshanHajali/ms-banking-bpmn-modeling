@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  postgresDB:
+    image: postgres
+    container_name: pg-cus-acc-container
+    mem_limit: 200 m
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5838:5432"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+
+volumes:
+  data:
+    external: true
+    name: customer-accounts-data # </> docker volume create customer-accounts-data

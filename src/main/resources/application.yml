@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5838/postgres #db_name
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+    show-sql: true
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+
+camunda.bpm.admin-user:
+  id: demo
+  password: demo

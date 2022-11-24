@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating customers table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: customers
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: numeric(16,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: birth_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar
+                  constraints:
+                    nullable: false
+
+            remarks: Stores customers infos

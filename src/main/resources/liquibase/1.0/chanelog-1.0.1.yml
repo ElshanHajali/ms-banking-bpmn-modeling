@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating accounts table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: type
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: iban
+                  type: varchar(28)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: customer_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_accounts_to_customers
+                    references: customers(id)
+                    nullable: true
+
+            remarks: Stores accounts infos
