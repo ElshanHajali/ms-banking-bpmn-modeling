@@ -3,7 +3,7 @@
 
 ### using bpmn modeling, use service in delegate classes
 
-BR-Teachway
+BR-Techway
 # Week 1
 
 ### Task 1
