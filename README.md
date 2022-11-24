@@ -1,7 +1,7 @@
 # ms-banking-bpmn-modeling
-#### Using bpmn modeling tool to Automate processes
+### Using bpmn modeling tool to Automate processes
 
-#### using bpmn modeling, use service in delegate classes
+### using bpmn modeling, use service in delegate classes
 
 BR-Teachway
 # Week 1
